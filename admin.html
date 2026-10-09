@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Yaari Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="bar"><div class="wrap"><b>Yaari Admin</b><span id="who"></span></div></header>
+
+<div id="login" class="wrap" style="max-width:420px;padding-top:30px">
+  <h2 class="t">Admin sign in</h2>
+  <label class="lb" for="em">Email</label><input class="in" id="em" type="email" autocomplete="username">
+  <label class="lb" for="pw">Password</label><input class="in" id="pw" type="password" autocomplete="current-password">
+  <div id="mfaBox" class="hide">
+    <label class="lb" for="mfa">Authenticator code (6 digits)</label><input class="in" id="mfa" inputmode="numeric" maxlength="6">
+  </div>
+  <p id="lerr" class="meta" style="color:var(--warn)"></p>
+  <button class="btn" id="go" style="width:100%;padding:12px">Sign in</button>
+</div>
+
+<div id="panel" class="hide">
+  <nav class="tabs" aria-label="Sections"><div class="wrap" id="tabs"></div></nav>
+  <main><div class="wrap" id="main"></div></main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shT">
+  <div class="sh-h"><h2 id="shT"></h2><button class="x" data-a="close" aria-label="Close">✕</button></div>
+  <div class="sh-b" id="shB"></div>
+</section>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
